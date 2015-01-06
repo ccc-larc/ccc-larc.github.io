@@ -2,7 +2,9 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <div class="site-title">
+      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+    </div>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -14,11 +16,14 @@
       </a>
 
       <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+        <ul class="page-link">
+          {% capture url %}{{ page.url | remove:'index.html' }}{% endcapture %}
+          {% for link in site.navigation %}
+            <li {% if link.url == page.url %} class="active" {% endif %}>
+              <a href="{{ link.url | prepend: site.baseurl }}">{{ link.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </nav>
 

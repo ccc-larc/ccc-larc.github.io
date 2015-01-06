@@ -21,6 +21,9 @@ body {
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
+    background: url('../img/taichung-city-map.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 
@@ -91,14 +94,10 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: $brand-color;
     text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
+    transition: all .25s ease;
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
     }
 }
 
@@ -129,8 +128,8 @@ pre,
 code {
     font-size: 15px;
     border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    border-radius: 4px;
+    background-color: #fdfcfb;
 }
 
 code {
