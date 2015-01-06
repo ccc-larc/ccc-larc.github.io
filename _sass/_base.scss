@@ -22,8 +22,8 @@ body {
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
     background: url('../img/taichung-city-map.jpg') no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-attachment: fixed !important;
+    background-size: cover !important;
 }
 
 
