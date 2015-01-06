@@ -24,6 +24,10 @@ body {
     background: url('../img/taichung-city-map.jpg') no-repeat;
     background-attachment: fixed !important;
     background-size: cover !important;
+
+    @include media-query($on-palm) {
+        font-size: $small-font-size;
+    }
 }
 
 

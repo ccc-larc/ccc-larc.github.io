@@ -3,12 +3,19 @@
  */
 .site-header {
     border-top: 5px solid $brand-color;
-    padding: 30px 0 10px 0;
+    padding-top: $spacing-unit;
+    padding-bottom: 10px;
     min-height: 56px;
     text-align: center;
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    @include media-query($on-palm) {
+        padding-top: $spacing-unit / 2;
+        padding-bottom: 0;
+        min-height: 0;
+    }
 }
 
 .site-title {
@@ -21,6 +28,11 @@
     a,
     a:visited {
         color: $grey-color-light;
+    }
+
+    @include media-query($on-palm) {
+        font-size: 24px;
+        line-height: 28px;
     }
 }
 
@@ -186,6 +198,10 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+
+    @include media-query($on-palm) {
+        padding-top: $spacing-unit * 0.5;
+    }
 }
 
 .page-heading {
@@ -202,30 +218,44 @@
 }
 
 .post-item {
-    padding: 50px;
-    padding-bottom: 75px;
+    padding: $spacing-unit * 2;
+    padding-bottom: 90px;
     background: $text-background;
-    margin-bottom: 50px;
+    margin-bottom: $spacing-unit * 2;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: $brand-color;
+
+    @include media-query($on-palm) {
+        padding: $spacing-unit * 0.5;
+        margin-bottom: $spacing-unit;
+    }
 }
 
 .post-meta {
     font-size: $small-font-size;
     color: $brand-color;
     text-transform: uppercase;
+
+    @include media-query($on-palm) {
+        font-size: $small-font-size * 0.875;
+    }
 }
 
 .post-link {
     display: block;
-    font-size: 24px;
+    font-size: $title-font-size;
 }
 
 .post-more {
     float: left;
-    padding-top: 7px;
+    margin: 7px 0 0 0;
     color: $text-color;
+
+    @include media-query($on-palm) {
+        float: none;
+        color: $brand-color;
+    }
 
     &:hover {
         color: $brand-color;
@@ -241,14 +271,20 @@
 }
 
 .post-title {
-    font-size: 24px;
+    font-size: $title-font-size;
     font-weight: bold;
     color: $text-color;
     margin-top: 10px;
     margin-bottom: 20px;
 
     @include media-query($on-laptop) {
-        font-size: 24px;
+        font-size: $title-font-size;
+    }
+
+    @include media-query($on-palm) {
+        font-size: $small-title-font-size;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 }
 
@@ -285,6 +321,11 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include media-query($on-palm) {
+        display: none;
+        float: none;
+    }
 
     li {
         display: inline-block;
